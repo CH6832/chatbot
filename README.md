@@ -1,7 +1,3 @@
-Certainly! A well-crafted README.md file is essential for providing users with information about the project, how to use it, and any other relevant details. Here's a template for a README.md file tailored for our chatbot project:
-
-markdown
-Copy code
 # Simple ChatBot
 
 Welcome to Simple ChatBot, a minimalistic chatbot implemented in Mojo that can engage in conversations with users and fetch information from Wikipedia.
@@ -34,7 +30,7 @@ cd simple-chatbot
 Run the chatbot:
 bash
 Copy code
-mojo run chatbot.mojo
+mojo run chatbot.py
 Usage
 Once the chatbot is running, you can start interacting with it by typing your messages in the terminal.
 The chatbot will respond based on the input provided.
@@ -49,15 +45,6 @@ Push to the branch: git push origin feature/new-feature.
 Submit a pull request.
 Please make sure to follow the code of conduct and contribution guidelines.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Acknowledgements
-Special thanks to Mojo for providing the programming language used to build this chatbot.
-Inspired by OpenAI and their efforts in natural language processing.
-vbnet
-Copy code
-
 In this README.md file:
 
 - We provide an overview of the project, its features, and how to get started with using it.
@@ -67,4 +54,6 @@ In this README.md file:
 - Licensing information clarifies the project's licensing terms.
 - Acknowledgements recognize any third-party libraries, tools, or inspirations used in the project.
 
-Feel free to customize this README.md template according to the specific details and re
+License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
