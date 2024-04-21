@@ -1,59 +1,64 @@
 # Simple ChatBot
 
-Welcome to Simple ChatBot, a minimalistic chatbot implemented in Mojo that can engage in conversations with users and fetch information from Wikipedia.
+## :newspaper: About the project
 
-## Features
+A minimalistic ChatBot implemented in Python that can retrieve information from Wikipedia based on keywords provided by a user.
 
-- Fetch information from Wikipedia based on user queries.
-- Maintain conversation history between runs.
-- Normalize user input for better matching and caching.
-- Error handling for API requests and parsing responses.
+### How it works
 
-## Getting Started
+The chatbot operates by first receiving user input through a text input field in a web interface. Upon receiving the input, it normalizes the text by converting it to lowercase and removing punctuation.
 
-Follow these instructions to get the chatbot up and running on your local machine.
+The normalized input is then checked against a conversation history to see if there's a pre-existing response. If not found, the chatbot queries the Wikipedia API to fetch relevant information based on the input.
 
-### Prerequisites
+This information is then cached for future use. The bot responds to the user with the fetched data or a default message if no relevant information is found. The conversation history, consisting of user inputs and bot responses, is stored in a file for reference. Additionally, the chat interface displays the conversation history, with user and bot messages displayed in separate chat bubbles.
 
-- Mojo programming language installed on your system. You can download Mojo from [here](https://github.com/mojolang/mojo).
+The chatbot continuously interacts with users in this manner, dynamically fetching information and updating the conversation history as needed.
 
-### Installation
+### Content overview
 
-1. Clone the repository:
+    .
+    ├── img/ - images for the README.md
+    ├── static/ - contains stylesheets
+    ├── templates/ - contains the html templates
+    ├── tests/ - contains unit tests
+    ├── chatbot.py - program entry point
+    ├── LICENSE - license text
+    └── README.md - relevant information about the project
+
+## :runner: Getting started
+
+### Prerequisites and example usage
+
+1. Clone the project and extract the folder:
 
 ```bash
-git clone https://github.com/your-username/simple-chatbot.git
-Navigate to the project directory:
-bash
-Copy code
-cd simple-chatbot
-Run the chatbot:
-bash
-Copy code
-mojo run chatbot.py
-Usage
-Once the chatbot is running, you can start interacting with it by typing your messages in the terminal.
-The chatbot will respond based on the input provided.
-Type 'quit' or 'exit' to end the conversation.
-Contributing
-Contributions are welcome! If you'd like to contribute to Simple ChatBot, please follow these steps:
+source venv/bin/activate
+```
 
-Fork the repository.
-Create your feature branch: git checkout -b feature/new-feature.
-Commit your changes: git commit -am 'Add new feature'.
-Push to the branch: git push origin feature/new-feature.
-Submit a pull request.
-Please make sure to follow the code of conduct and contribution guidelines.
+2. Open the entire project in an IDE of your choice.
 
-In this README.md file:
+3. Run the app
 
-- We provide an overview of the project, its features, and how to get started with using it.
-- Installation instructions guide users through setting up the project on their local machine.
-- Usage instructions explain how to interact with the chatbot once it's running.
-- Contribution guidelines encourage users to contribute to the project, while also emphasizing the importance of following the code of conduct.
-- Licensing information clarifies the project's licensing terms.
-- Acknowledgements recognize any third-party libraries, tools, or inspirations used in the project.
+```bash
+python3 chatbot.py
+```
 
-License
+4. the open the link in your browser and start interacting with it
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+![Chatbot starting page](img/chatbot_webpage.png)
+
+## :books: Resources used to create this project
+
+* Python
+  * [Python 3.11 documentation](https://docs.python.org/3.11/)
+  * [Built-in Functions](https://docs.python.org/3.11/library/functions.html)
+  * [Python Module Index](https://docs.python.org/3.11/py-modindex.html)
+  * [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+* Wikipedia API
+  * [Getting started with Wikimedia APIs](https://api.wikimedia.org/wiki/Getting_started_with_Wikimedia_APIs)
+* Editor
+  * [Visual Studio Code](https://code.visualstudio.com/)
+
+## :bookmark: License
+
+This project is licensed under the terms of the [MIT License](LICENSE).

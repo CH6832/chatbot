@@ -1,8 +1,11 @@
+from flask import Flask, render_template, request
 import re
 import json
 import http.client as http
 import urllib.parse as io
 import random
+
+app = Flask(__name__)
 
 # Define the file path for storing conversation history
 FILE_PATH = "conversation_history.txt"
@@ -70,45 +73,27 @@ def save_history_to_file(history):
 # Function to load conversation history from a file
 def load_history_from_file():
     history = {}
-    if os.path.exists(FILE_PATH):
+    try:
         with open(FILE_PATH, "r") as file:
             for line in file:
                 parts = line.strip().split(",")
                 if len(parts) == 2:
                     history[parts[0]] = parts[1]
+    except FileNotFoundError:
+        pass
     return history
 
-# Main function for chatting
-def main():
-    # Load conversation history from file
-    global conversation_history
-    conversation_history = load_history_from_file()
+@app.route("/")
+def index():
+    return render_template("index.html")
 
-    # Welcome message
-    print("Welcome to the Simple ChatBot!")
-    print("Type 'quit' or 'exit' to end the conversation.\n")
-
-    # Main loop for chatting
-    while True:
-        # Get user input
-        user_input = input("You: ").strip()
-
-        # Check for exit command
-        if user_input.lower() in ["quit", "exit"]:
-            print(random.choice(["Goodbye!", "See you later!", "Bye!"]))
-            break
-
-        # Get bot response
-        bot_response = get_response(user_input)
-
-        # Print bot response
-        print("ChatBot:", bot_response)
-
-        # Store user input and bot response in conversation history
-        conversation_history[normalize_input(user_input)] = bot_response
-
-    # Save conversation history to file before exiting
-    save_history_to_file(conversation_history)
+@app.route("/chat", methods=["POST"])
+def chat():
+    user_input = request.form["user_input"]
+    bot_response = get_response(user_input)
+    return {"bot_response": bot_response}
 
 if __name__ == "__main__":
-    main()
+    # Load conversation history from file
+    conversation_history = load_history_from_file()
+    app.run(debug=True)
