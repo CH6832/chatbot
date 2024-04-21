@@ -32,7 +32,7 @@ The chatbot continuously interacts with users in this manner, dynamically fetchi
 1. Clone the project and extract the folder:
 
 ```bash
-source venv/bin/activate
+git clone 
 ```
 
 2. Open the entire project in an IDE of your choice.
