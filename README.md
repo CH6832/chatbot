@@ -32,18 +32,18 @@ The chatbot continuously interacts with users in this manner, dynamically fetchi
 1. Clone the project and extract the folder:
 
 ```bash
-git clone 
+git clone https://github.com/CH6832/chatbot.git
 ```
 
 2. Open the entire project in an IDE of your choice.
 
-3. Run the app
+3. Run the app:
 
 ```bash
 python3 chatbot.py
 ```
 
-4. the open the link in your browser and start interacting with it
+4. the open the link in your browser and start interacting with it:
 
 ![Chatbot starting page](img/chatbot_webpage.png)
 
