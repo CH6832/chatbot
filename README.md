@@ -22,6 +22,8 @@ The chatbot continuously interacts with users in this manner, dynamically fetchi
     ├── templates/ - contains the html templates
     ├── tests/ - contains unit tests
     ├── chatbot.py - program entry point
+    ├── CODE_OF_CONDUCT.md - project code of conduct
+    ├── COPYRIGHT - project copyright
     ├── LICENSE - license text
     └── README.md - relevant information about the project
 
@@ -62,3 +64,11 @@ python3 chatbot.py
 ## :bookmark: License
 
 This project is licensed under the terms of the [MIT License](LICENSE).
+
+## :copyright: Copyright
+
+See the [COPYRIGHT](COPYRIGHT) file for copyright and licensing details.
+
+## :straight_ruler: Code of Conduct
+
+Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing to this project.
