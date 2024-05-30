@@ -1,4 +1,4 @@
-# Simple ChatBot
+# WikiBot
 
 ## :newspaper: About the project
 
@@ -17,6 +17,7 @@ The chatbot continuously interacts with users in this manner, dynamically fetchi
 ### Content overview
 
     .
+    ├── docs/ - project documentation
     ├── img/ - images for the README.md
     ├── static/ - contains stylesheets
     ├── templates/ - contains the html templates
@@ -25,7 +26,8 @@ The chatbot continuously interacts with users in this manner, dynamically fetchi
     ├── CODE_OF_CONDUCT.md - project code of conduct
     ├── COPYRIGHT - project copyright
     ├── LICENSE - license text
-    └── README.md - relevant information about the project
+    ├── README.md - relevant information about the project
+    └── requirements.txt - requirements to run the project
 
 ## :runner: Getting started
 
@@ -49,12 +51,71 @@ python3 chatbot.py
 
 ![Chatbot starting page](img/chatbot_webpage.png)
 
+### Generate documentation
+
+0. Create a `docs\` folder:
+
+```sh
+mkdir docs
+```
+
+1. Move into the folder:
+
+```sh
+cd docs
+```
+
+2. Initialize a WikiBot project:
+
+```sh
+sphinx-quickstart
+```
+
+3. Fill the `.rst` files with content, e.g. `index.rst`:
+
+```sh
+.. WikiBot documentation master file, created by
+   sphinx-quickstart on Thu May 30 21:14:20 2024.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to WikiBot's documentation!
+===================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   installation
+   usage
+   api
+   contributing
+
+Introduction
+============
+
+WikiBot is a minimalistic chatbot implemented in Python that retrieves information from Wikipedia based on keywords provided by a user. This bot uses Flask for the web interface and interacts with the Wikipedia API to fetch relevant data.
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+```
+
+4. Generate the documentation:
+
+```sh
+make html
+```
+
 ## :books: Resources used to create this project
 
 * Python
-  * [Python 3.11 documentation](https://docs.python.org/3.11/)
-  * [Built-in Functions](https://docs.python.org/3.11/library/functions.html)
-  * [Python Module Index](https://docs.python.org/3.11/py-modindex.html)
+  * [Python documentation](https://docs.python.org/3/)
+  * [Built-in Functions](https://docs.python.org/3/library/functions.html)
+  * [Python Module Index](https://docs.python.org/3/py-modindex.html)
   * [Flask](https://flask.palletsprojects.com/en/3.0.x/)
 * Wikipedia API
   * [Getting started with Wikimedia APIs](https://api.wikimedia.org/wiki/Getting_started_with_Wikimedia_APIs)
